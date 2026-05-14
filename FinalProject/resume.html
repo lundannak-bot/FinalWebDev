@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anna K. Lund — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --sage: #8A9E8C;
+      --sage-light: #EAF0EA;
+      --sage-dark: #4A6550;
+      --ivory: #F9F6F0;
+      --warm-white: #FDFBF7;
+      --ink: #1E1E1E;
+      --ink-muted: #5A5A5A;
+      --ink-faint: #9A9A9A;
+      --gold: #B8965A;
+      --gold-light: #F5EDD8;
+      --border: rgba(138,158,140,0.25);
+      --border-strong: rgba(138,158,140,0.5);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--ivory);
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    /* ── HERO ─────────────────────────────── */
+    .hero {
+      background: var(--warm-white);
+      border-bottom: 1px solid var(--border);
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 20% 20%, rgba(138,158,140,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 60% at 80% 80%, rgba(184,150,90,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--sage-dark);
+    }
+
+    .hero-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--ink-muted);
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+
+    .hero-contact {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem 1.5rem;
+      font-size: 13px;
+      color: var(--ink-muted);
+    }
+
+    .hero-contact a {
+      color: var(--sage-dark);
+      text-decoration: none;
+    }
+
+    .hero-contact a:hover { text-decoration: underline; }
+
+    .hero-contact span::before {
+      content: '·';
+      margin-right: 1.5rem;
+    }
+
+    .hero-contact span:first-child::before { display: none; }
+
+    /* ── NAV ─────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(249,246,240,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 0;
+      list-style: none;
+    }
+
+    nav a {
+      display: block;
+      padding: 0.85rem 1.25rem;
+      font-size: 12.5px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--sage-dark);
+      border-color: var(--sage);
+    }
+
+    /* ── LAYOUT ─────────────────────────────── */
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    /* ── SECTION ─────────────────────────────── */
+    section {
+      padding-top: 4.5rem;
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-label h2 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      white-space: nowrap;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border-strong);
+    }
+
+    /* ── EDUCATION CARD ─────────────────────────── */
+    .edu-card {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem 2.25rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .edu-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: linear-gradient(to bottom, var(--sage), var(--gold));
+      border-radius: 12px 0 0 12px;
+    }
+
+    .edu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .edu-school {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.55rem;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    .edu-school span {
+      display: block;
+      font-size: 1rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--ink-muted);
+      margin-top: 2px;
+    }
+
+    .edu-meta {
+      text-align: right;
+    }
+
+    .edu-date {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+    }
+
+    .edu-location {
+      font-size: 12px;
+      color: var(--ink-faint);
+    }
+
+    .degree-badge {
+      display: inline-block;
+      background: var(--sage-light);
+      color: var(--sage-dark);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin: 0.75rem 0 1rem;
+      letter-spacing: 0.03em;
+    }
+
+    .edu-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    .edu-stat {
+      background: var(--ivory);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.7rem 1rem;
+      text-align: center;
+    }
+
+    .edu-stat-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--sage-dark);
+      line-height: 1;
+    }
+
+    .edu-stat-label {
+      font-size: 11px;
+      color: var(--ink-faint);
+      margin-top: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .edu-orgs {
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .org-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--ink-faint);
+      margin-bottom: 0.6rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .pill {
+      display: inline-block;
+      border: 1px solid var(--border-strong);
+      border-radius: 100px;
+      padding: 3px 11px;
+      font-size: 12.5px;
+      color: var(--ink-muted);
+    }
+
+    /* ── EXPERIENCE / VOLUNTEER ─────────────────── */
+    .entry {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0 1.5rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .entry:last-child { border-bottom: none; }
+
+    .entry-body { grid-column: 1; }
+
+    .entry-side {
+      grid-column: 2;
+      text-align: right;
+      min-width: 130px;
+    }
+
+    .entry-org {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    .entry-role {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--sage-dark);
+      margin-top: 3px;
+      letter-spacing: 0.02em;
+    }
+
+    .entry-location {
+      font-size: 12px;
+      color: var(--ink-faint);
+      margin-top: 1px;
+    }
+
+    .entry-date {
+      font-size: 12.5px;
+      color: var(--gold);
+      font-weight: 500;
+      margin-top: 3px;
+    }
+
+    .entry ul {
+      margin-top: 1rem;
+      padding-left: 1.1rem;
+    }
+
+    .entry ul li {
+      font-size: 14px;
+      color: var(--ink-muted);
+      line-height: 1.65;
+      margin-bottom: 0.4rem;
+    }
+
+    /* ── SKILLS ─────────────────────────────── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-group {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+    }
+
+    .skill-group-title {
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--sage-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .skill-group ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .skill-group ul li {
+      font-size: 13.5px;
+      color: var(--ink-muted);
+      padding: 3px 0;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .skill-group ul li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--sage);
+      flex-shrink: 0;
+    }
+
+    /* ── COURSES ─────────────────────────────── */
+    .courses-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 1.25rem;
+    }
+
+    .course-tag {
+      background: var(--gold-light);
+      color: #7A5E2A;
+      border: 1px solid rgba(184,150,90,0.3);
+      border-radius: 6px;
+      padding: 4px 12px;
+      font-size: 12.5px;
+      font-weight: 400;
+    }
+
+    /* ── FOOTER ─────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      font-size: 12px;
+      color: var(--ink-faint);
+    }
+
+    /* ── RESPONSIVE ─────────────────────────── */
+    @media (max-width: 600px) {
+      .hero { padding: 3.5rem 1.5rem 3rem; }
+      .hero h1 { font-size: 2.8rem; }
+      .page { padding: 0 1.25rem 4rem; }
+      .entry { grid-template-columns: 1fr; }
+      .entry-side { text-align: left; margin-top: 0.25rem; grid-column: 1; }
+      nav a { padding: 0.75rem 0.75rem; font-size: 11px; }
+      .edu-highlights { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <p class="hero-eyebrow">Résumé</p>
+    <h1>Anna <em>K.</em> Lund</h1>
+    <p class="hero-subtitle">Finance Student · BYU Marriott School of Business</p>
+    <div class="hero-contact">
+      <span>(801) 656-8252</span>
+      <span><a href="mailto:alund10@byu.edu">alund10@byu.edu</a></span>
+      <span>Holladay, UT</span>
+    </div>
+  </header>
+
+   <nav class="site-nav">
+    <a href="resume.html">Résumé</a>
+    <a href="sudoku.html">Sudoku</a>
+    <a href="about.html" class="active">About Me</a>
+  </nav>
+
+  <main class="page">
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <div class="section-label"><h2>Education</h2></div>
+
+      <div class="edu-card">
+        <div class="edu-header">
+          <div class="edu-school">
+            Brigham Young University
+            <span>Marriott School of Business</span>
+          </div>
+          <div class="edu-meta">
+            <div class="edu-date">Expected Apr 2028</div>
+            <div class="edu-location">Provo, UT</div>
+          </div>
+        </div>
+
+        <div class="degree-badge">Bachelor of Science in Finance</div>
+
+        <div class="edu-highlights">
+          <div class="edu-stat">
+            <div class="edu-stat-value">3.93</div>
+            <div class="edu-stat-label">Major GPA</div>
+          </div>
+          <div class="edu-stat">
+            <div class="edu-stat-value">3.95</div>
+            <div class="edu-stat-label">Cumulative GPA</div>
+          </div>
+          <div class="edu-stat">
+            <div class="edu-stat-value">33</div>
+            <div class="edu-stat-label">ACT Score</div>
+          </div>
+        </div>
+
+        <div class="edu-orgs">
+          <p class="org-label">Honors &amp; Scholarships</p>
+          <div class="pill-row">
+            <span class="pill">Academic Scholarship</span>
+          </div>
+        </div>
+
+        <div class="edu-orgs">
+          <p class="org-label">Organizations</p>
+          <div class="pill-row">
+            <span class="pill">Finance Society</span>
+            <span class="pill">Women in Finance</span>
+            <span class="pill">Corporate Finance &amp; Advisory Association</span>
+          </div>
+        </div>
+
+        <div class="edu-orgs">
+          <p class="org-label">Relevant Coursework</p>
+          <div class="courses-row">
+            <span class="course-tag">Finance</span>
+            <span class="course-tag">Economics</span>
+            <span class="course-tag">Accounting</span>
+            <span class="course-tag">Finite Mathematics</span>
+            <span class="course-tag">Information Systems</span>
+            <span class="course-tag">Statistics</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="section-label"><h2>Experience</h2></div>
+
+      <div class="entry">
+        <div class="entry-body">
+          <p class="entry-org">CFAA Walmart Case Competition</p>
+          <p class="entry-role">Team Member &amp; Group Leader</p>
+          <ul>
+            <li>Generated a solution to Walmart's disconnect between in-store and online applications, focusing on omnichannel experience improvements.</li>
+            <li>Led the group and structured an effective presentation using Microsoft PowerPoint, pitching profitability-driving ideas to a company associate.</li>
+          </ul>
+        </div>
+        <div class="entry-side">
+          <p class="entry-location">Provo, UT</p>
+          <p class="entry-date">Mar – Apr 2024</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-body">
+          <p class="entry-org">SSA Group</p>
+          <p class="entry-role">Retail Associate</p>
+          <ul>
+            <li>Built genuine connections with guests and delivered excellent customer service throughout the shopping experience.</li>
+            <li>Mastered the full POS system — purchases, searches, and discounts — enabling timely and accurate transactions.</li>
+            <li>Onboarded and trained 10+ new employees, equipping them to make a meaningful impact on guests and team culture.</li>
+          </ul>
+        </div>
+        <div class="entry-side">
+          <p class="entry-location">Salt Lake City, UT</p>
+          <p class="entry-date">Jan 2021 – Aug 2023</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VOLUNTEER -->
+    <section id="volunteer">
+      <div class="section-label"><h2>Volunteer Service</h2></div>
+
+      <div class="entry">
+        <div class="entry-body">
+          <p class="entry-org">The Church of Jesus Christ of Latter-day Saints</p>
+          <p class="entry-role">Volunteer Representative</p>
+          <ul>
+            <li>Led daily engagement efforts supporting goal achievement and following up on key commitments across the team.</li>
+            <li>Mentored ten volunteers through one-on-one interactions to improve individual performance and communication skills.</li>
+            <li>Assembled and delivered five slide deck presentations covering goal setting, planning, character, and soft skills.</li>
+          </ul>
+        </div>
+        <div class="entry-side">
+          <p class="entry-location">Santa Cruz, Bolivia</p>
+          <p class="entry-date">Jun 2024 – Dec 2025</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-body">
+          <p class="entry-org">Crestview Elementary School</p>
+          <p class="entry-role">Classroom &amp; Library Volunteer</p>
+          <ul>
+            <li>Individually coached students in math and language arts, tracking progress to keep teachers informed.</li>
+            <li>Prepared art activities and organized classroom and library spaces to support teachers and students.</li>
+          </ul>
+        </div>
+        <div class="entry-side">
+          <p class="entry-location">Provo, UT</p>
+          <p class="entry-date">Oct 2022 – May 2023</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-body">
+          <p class="entry-org">The Church of Jesus Christ of Latter-day Saints</p>
+          <p class="entry-role">President, Young Women's Class (Ages 12–18)</p>
+          <ul>
+            <li>Facilitated and executed plans at two weekly meetings, handling logistics and enabling all activities to run smoothly.</li>
+            <li>Led a team of 10 women in monthly planning meetings, delegating responsibilities and coordinating upcoming events.</li>
+            <li>Directed all class communications — sending reminders and ensuring every youth member was contacted.</li>
+          </ul>
+        </div>
+        <div class="entry-side">
+          <p class="entry-location">Holladay, UT</p>
+          <p class="entry-date">Jan 2022 – Jan 2023</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="section-label"><h2>Skills &amp; Interests</h2></div>
+
+      <div class="skills-grid">
+        <div class="skill-group">
+          <p class="skill-group-title">Languages</p>
+          <ul>
+            <li>English (native)</li>
+            <li>Spanish — Utah State Seal of Biliteracy</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-group-title">Microsoft Office</p>
+          <ul>
+            <li>Word — Expert Certified</li>
+            <li>Excel — Expert Certified</li>
+            <li>PowerPoint — Associate Certified</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-group-title">Soft Skills</p>
+          <ul>
+            <li>Leadership &amp; team management</li>
+            <li>Public speaking &amp; presenting</li>
+            <li>Customer service</li>
+            <li>Mentorship &amp; training</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-group-title">Interests</p>
+          <ul>
+            <li>Piano</li>
+            <li>Reading</li>
+            <li>Football</li>
+            <li>Sudoku &amp; word puzzles</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Anna K. Lund · Finance Student · Brigham Young University Marriott School of Business</p>
+  </footer>
+
+</body>
+</html>

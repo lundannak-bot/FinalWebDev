@@ -1,0 +1,98 @@
+body {
+  font-family: "Comic Sans MS", "Arial Rounded MT Bold", sans-serif;
+  background: #87CEEB; /* Classic Simpsons sky blue */
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #000;
+  background-image: radial-gradient(circle, #87CEEB 60%, #6BB4D6 100%);
+}
+
+/* --- Retro Content Box --- */
+.container {
+  max-width: 900px;
+  margin: 50px auto;
+  background: #FEEA3B; /* Homer yellow */
+  padding: 40px;
+  border-radius: 10px;
+  border: 5px solid #000; /* Thick cartoon outline */
+  box-shadow: 0 0 0 6px #FFFFFF, 0 0 0 10px #000; /* Layered retro outline */
+}
+
+/* --- Headings (90s Cartoon Style) --- */
+h1, h2, h3 {
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-shadow: 3px 3px 0 #000;
+  color: #FFFFFF;
+}
+
+/* --- Rounded Images with Retro Outline --- */
+img.simpsonfam.jpg {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 25px;
+  border: 5px solid #000;
+  box-shadow: 0 0 0 6px #FFFFFF, 0 0 0 10px #000;
+  margin: 20px 0;
+}
+
+/* --- Retro Paragraph Style --- */
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 20px;
+  color: #000;
+}
+
+/* --- Ordered List (centered numbers) --- */
+ol.homer-list {
+  list-style: decimal;
+  padding-left: 0;          /* Remove browser indent */
+  margin: 20px auto;
+  text-align: left;         /* Keep items aligned left */
+  display: inline-block;    /* Allows centering the whole list */
+}
+
+ol.homer-list li {
+  margin: 10px 0;
+  font-weight: bold;
+  padding-left: 10px;       /* Small indent so numbers aren't glued to text */
+}
+
+/* --- Unordered List (donut bullets) --- */
+ul {
+  list-style: none;
+  padding-left: 40px;
+  margin: 20px auto;
+  text-align: left;
+  display: inline-block;
+  position: relative;
+}
+
+ul.homer-list li {
+  background: #FFFFFF;
+  margin: 12px 0;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+  position: relative;
+  border: 3px solid #000;
+  box-shadow: 0 0 0 4px #FEEA3B, 0 0 0 7px #000;
+}
+
+/* Donut icon only for UL items */
+ul. li::before {
+  content: "🍩";
+  position: absolute;
+  left: -35px;
+  top: 6px;
+  font-size: 22px;
+}
+
+.super-emphasis {
+  font-weight: bold;
+  color: #d21eba;
+  text-shadow: 2px 2px 0 #000;
+}
