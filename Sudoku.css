@@ -1,0 +1,207 @@
+/* General layout */
+body {
+  font-family: "Trebuchet MS", "Century Gothic", "Segoe UI", sans-serif;
+  font-weight: bold;
+  background: #ffeef5; /* soft pink */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  color: #444;
+}
+
+/* Title */
+h1 {
+  color: #d63384; /* rose pink */
+  margin-bottom: 10px;
+  font-size: 2.4rem;
+  letter-spacing: 1px;
+}
+
+/* Controls */
+#controls {
+  margin-bottom: 15px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+select, button {
+  padding: 8px 14px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 2px solid #ffb3d9;
+  background: #fff0f7;
+  color: #b30059;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover, select:hover {
+  background: #ffd6e8;
+  border: 2px solid #ffb3d9;
+}
+
+/* ----------------------------- */
+/*   GENERAL TEXT & HEADINGS     */
+/* ----------------------------- */
+
+h1, h2, h3, h4 {
+  color: #d63384; /* rose pink */
+  font-family: "Trebuchet MS", "Century Gothic", "Segoe UI", sans-serif;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  border-bottom: 2px solid #ffb3d9;
+  padding-bottom: 4px;
+}
+
+h3 {
+  font-size: 1.4rem;
+  color: #b30059;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #5a0030;
+  margin-bottom: 12px;
+}
+
+/* ----------------------------- */
+/*            LINKS              */
+/* ----------------------------- */
+
+a {
+  color: #d63384;
+  text-decoration: none;
+  border-bottom: 1px dashed #ff99cc;
+  transition: 0.2s;
+}
+
+a:hover {
+  color: #b30059;
+  border-bottom-color: #ff66b3;
+}
+
+/* ----------------------------- */
+/*             LISTS             */
+/* ----------------------------- */
+
+ul, ol {
+  padding-left: 25px;
+  margin-bottom: 15px;
+}
+
+ul li, ol li {
+  margin-bottom: 6px;
+  color: #660033;
+}
+
+ul li::marker {
+  color: #ff66b3; /* cute pink bullets */
+}
+
+ol li::marker {
+  color: #d63384;
+  font-weight: bold;
+}
+
+/* ----------------------------- */
+/*        CONTENT SECTIONS       */
+/* ----------------------------- */
+
+.section-card {
+  background: #fff0f7;
+  border: 2px solid #ffd6e8;
+  padding: 18px;
+  border-radius: 12px;
+  margin: 15px 0;
+  box-shadow: 0 0 10px rgba(255, 150, 200, 0.25);
+}
+
+/* ----------------------------- */
+/*        EXTRA BUTTONS          */
+/* ----------------------------- */
+
+.pretty-btn {
+  padding: 10px 18px;
+  background: #ffd6e8;
+  border: 2px solid #ffb3d9;
+  border-radius: 10px;
+  color: #b30059;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.pretty-btn:hover {
+  background: #ffccdf;
+  border-color: #ff8cc6;
+}
+
+/* ----------------------------- */
+/*       HORIZONTAL RULES        */
+/* ----------------------------- */
+
+hr {
+  border: none;
+  border-top: 2px dashed #ffb3d9;
+  margin: 20px 0;
+}
+
+/* ----------------------------- */
+/*        BLOCKQUOTES            */
+/* ----------------------------- */
+
+blockquote {
+  background: #ffe6f2;
+  border-left: 5px solid #ff99cc;
+  padding: 12px 16px;
+  margin: 15px 0;
+  border-radius: 8px;
+  color: #660033;
+  font-style: italic;
+}
+/* ----------------------------- */
+/*   PAGE BACKGROUND + WRAPPER   */
+/* ----------------------------- */
+
+/* Full page background */
+body {
+  background: #ffe6f2; /* soft pink */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Main content container */
+.page-wrapper {
+  background: #ffffff; /* clean white center */
+  width: 90%;
+  max-width: 60%;
+  padding: 80px 80px;
+  margin: 50px 0;
+  border-radius: 18px;
+  box-shadow: 0 0 20px rgba(255, 150, 200, 0.25);
+  border: 2px solid #ffd6e8;
+}
+
+/* Optional: give all text inside a softer tone */
+.page-wrapper p,
+.page-wrapper h1,
+.page-wrapper h2,
+.page-wrapper h3,
+.page-wrapper ul,
+.page-wrapper ol {
+  color: #660033;
+}
+
+/* Make spacing consistent */
+.page-wrapper > * {
+  margin-bottom: 30px;
+}
